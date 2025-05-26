@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.sprise233.bumentong.mapper.EmployeeMapper">
+
+    <select id="selectByQueryParams" resultType="com.github.sprise233.bumentong.dto.EmployeeDTO">
+        select employee.*, dept.name as deptName
+        from employee left join dept on employee.dept_id = dept.id
+        <where>
+            <if test="name != null and name != ''">
+                and employee.name like concat('%', #{name}, '%')
+            </if>
+            <if test="gender != null and gender != ''">
+                and employee.gender = #{gender}
+            </if>
+            <if test="begin != null and end != null">
+                and employee.entry_date between #{begin} and #{end}
+            </if>
+        </where>
+        order by employee.entry_date desc
+    </select>
+
+    <resultMap id="getEmployeeByIdMap" type="com.github.sprise233.bumentong.dto.EmployeeDTO">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="gender" property="gender"/>
+        <result column="image" property="image"/>
+        <result column="phone" property="phone"/>
+        <result column="salary" property="salary"/>
+        <result column="password" property="password"/>
+        <result column="position" property="position"/>
+        <result column="entry_date" property="entryDate"/>
+        <result column="dept_id" property="deptId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="username" property="username"/>
+        <collection property="exprList" ofType="com.github.sprise233.bumentong.entity.EmployeeExpr">
+            <id column="ee_id" property="id"/>
+            <result column="ee_employee_id" property="employeeId"/>
+            <result column="ee_company" property="company"/>
+            <result column="ee_job" property="job"/>
+            <result column="ee_begin" property="begin"/>
+            <result column="ee_end" property="end"/>
+        </collection>
+    </resultMap>
+
+    <select id="getEmployeeById" resultType="com.github.sprise233.bumentong.dto.EmployeeDTO" resultMap="getEmployeeByIdMap">
+        select
+            e.*,
+            ee.id as ee_id,
+            ee.company as ee_company,
+            ee.job as ee_job,
+            ee.begin as ee_begin,
+            ee.end as ee_end,
+            ee.employee_id as ee_employee_id,
+            ee.company  as ee_company
+        from employee as e
+                 left join bumentong.employee_expr ee on e.id = ee.employee_id
+        where e.id = #{id}
+    </select>
+
+    <insert id="addEmployee" keyProperty="id" useGeneratedKeys="true">
+        insert into employee(name, gender, image, phone, salary, password, position, entry_date, dept_id, create_time, update_time, username)
+        values (#{name}, #{gender}, #{image}, #{phone}, #{salary}, #{password}, #{position}, #{entryDate}, #{deptId}, #{createTime}, #{updateTime}, #{username})
+    </insert>
+
+    <delete id="deleteEmployeeById">
+        DELETE FROM employee WHERE id = #{id}
+    </delete>
+
+    <update id="updateEmployee">
+        UPDATE employee
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="salary != null">salary = #{salary},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="position != null">position = #{position},</if>
+            <if test="entryDate != null">entry_date = #{entryDate},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="username != null">username = #{username}</if>
+        </trim>
+        WHERE
+        id = #{id};
+    </update>
+</mapper>
