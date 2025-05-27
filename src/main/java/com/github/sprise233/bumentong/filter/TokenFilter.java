@@ -2,7 +2,6 @@ package com.github.sprise233.bumentong.filter;
 
 import com.github.sprise233.bumentong.utils.JWTUtils;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -25,7 +24,7 @@ public class TokenFilter implements Filter {
 
         try {
 //            System.out.println(httpRequest.getHeader("token"));
-            JWTUtils.getUserId(httpRequest.getHeader("token"));
+            JWTUtils.parseUserByToken(httpRequest.getHeader("token"));
             chain.doFilter(request, response);
         } catch (Exception e) {
             httpResponse.setStatus(401);

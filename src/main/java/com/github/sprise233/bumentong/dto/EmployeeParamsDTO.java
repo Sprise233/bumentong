@@ -14,6 +14,6 @@ public class EmployeeParamsDTO {
     private LocalDate begin;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate end;
-    private Integer page = 1;
-    private Integer pageSize = 10;
+    private Integer page;
+    private Integer pageSize;
 }

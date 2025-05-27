@@ -1,6 +1,7 @@
 package com.github.sprise233.bumentong.controller;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.github.sprise233.bumentong.anno.Log;
 import com.github.sprise233.bumentong.dto.ResultDTO;
 import com.github.sprise233.bumentong.service.UploadFileService;
 import com.github.sprise233.bumentong.utils.AliOssUtils;
@@ -18,6 +19,7 @@ public class UploadController {
     @Autowired
     UploadFileService uploadFileService;
 
+    @Log
     @PostMapping
     public ResultDTO uploadFile(@RequestParam("file") MultipartFile multipartFile) throws Exception {
         String url = uploadFileService.uploadFile(multipartFile.getOriginalFilename(), multipartFile.getBytes());
