@@ -28,6 +28,7 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     public ResultDTO addDept(Dept dept) {
+        System.out.println(deptMapper.getDeptByName(dept.getName()));
         dept.setCreateTime(LocalDateTime.now());
         dept.setUpdateTime(LocalDateTime.now());
         deptMapper.addDept(dept);

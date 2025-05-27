@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.sprise233.bumentong.mapper.OperateLogMapper">
+    <insert id="insertOperateLog">
+        insert into
+        operate_log(operate_time,operate_user,method_name,method_params,return_value,cost_time,class_name,operate_emp_username)
+        values(#{operateTime},#{operateUser},#{methodName},#{methodParams},#{returnValue},#{costTime},#{className},
+        #{operateEmpUsername} )
+    </insert>
+
+    <select id="getOperateByParams" resultType="com.github.sprise233.bumentong.dto.OperateLogDTO">
+        select *, operate_log.operate_emp_username as operateEmpName from operate_log
+        order by operate_time desc
+    </select>
+</mapper>

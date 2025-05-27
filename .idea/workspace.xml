@@ -4,7 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d84f03fe-2dd5-43a0-82dd-bb4f127153e1" name="Changes" comment="" />
+    <list default="true" id="d84f03fe-2dd5-43a0-82dd-bb4f127153e1" name="Changes" comment="feat(expection): 添加全局异常处理器&#10;&#10;- 新增 GlobalExceptionHandler 类，用于处理全局异常&#10;- 使用 @ControllerAdvice 注解实现全局异常处理&#10;- 处理 Exception 类型的异常，返回 ResultDTO 错误信息">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0ca7a6d-50ea-4b18-8491-2f0bcc75a80f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b0ca7a6d-50ea-4b18-8491-2f0bcc75a80f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/BumentongApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/BumentongApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/config/LoginConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/config/LoginConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/dto/EmployeeParamsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/dto/EmployeeParamsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/filter/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/filter/TokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/mapper/DeptMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/service/Impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/service/Impl/DeptServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/utils/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/sprise233/bumentong/utils/JWTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/sprise233/bumentong/BumentongApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/sprise233/bumentong/BumentongApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/sprise233/bumentong/leetcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/sprise233/bumentong/leetcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/BumentongApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/controller/DeptController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/controller/EmployeeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/controller/UploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/dto/EmployeeDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/dto/EmployeeParamsDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/dto/ListResponseDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/dto/LoginDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/dto/LoginParamsDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/dto/ResultDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/entity/Dept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/entity/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/entity/EmployeeExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/mapper/DeptMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/mapper/EmployeeExprMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/mapper/EmployeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/mapper/LoginMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/DeptService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/EmployeeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/Impl/DeptServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/Impl/EmployeeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/Impl/LoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/Impl/UploadFileServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/service/UploadFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/utils/AliOssUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/sprise233/bumentong/utils/JWTUtils.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +73,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:Sprise233/bumentong.git",
+    "accountId": "50d4a627-f3f4-4f2d-b5f7-3aa7acc91cf0"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/com/github/sprise233/bumentong/leetcode.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -40,6 +99,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2xOvz6IBaOwijteudEAuyIk6ePm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,6 +123,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.BumentongApplication.executor": "Run",
+    "git-widget-placeholder": "master__aspect__log",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/java_programs/bumentong/backend/bumentong/src/main/resources/mapper",
@@ -72,7 +135,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.1150748",
-    "settings.editor.selected.configurable": "SQL Dialects",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -139,6 +202,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

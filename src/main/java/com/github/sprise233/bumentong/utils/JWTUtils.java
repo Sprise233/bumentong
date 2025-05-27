@@ -23,6 +23,7 @@ public class JWTUtils {
     private static long EXPIRATION; // 24 * 60 * 60 * 1000
 
     private static ThreadLocal<Integer> userId = new ThreadLocal<>();
+    private static ThreadLocal<String> userName = new ThreadLocal<>();
 
     @PostConstruct
     private void init() {
@@ -62,14 +63,21 @@ public class JWTUtils {
      * 获取用户ID
      *
      * @param token 待解析的 JWT token
-     * @return 返回用户ID
      */
-    public static Integer getUserId(String token) {
+    public static void parseUserByToken(String token) {
         Claims claims = Jwts.parser()
                 .setSigningKey(SECRET_KEY)
                 .parseClaimsJws(token)
                 .getBody();
         userId.set(Integer.parseInt(claims.get("id").toString()));
+        userName.set(claims.get("username").toString());
+    }
+
+    public static Integer getUserId() {
         return userId.get();
+    }
+
+    public static String getUserName() {
+        return userName.get();
     }
 }

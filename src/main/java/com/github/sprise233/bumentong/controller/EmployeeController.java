@@ -1,5 +1,6 @@
 package com.github.sprise233.bumentong.controller;
 
+import com.github.sprise233.bumentong.anno.Log;
 import com.github.sprise233.bumentong.dto.EmployeeDTO;
 import com.github.sprise233.bumentong.dto.EmployeeParamsDTO;
 import com.github.sprise233.bumentong.entity.Employee;
@@ -29,6 +30,7 @@ public class EmployeeController {
     /**
      * 根据条件查询员工信息
      */
+    @Log
     @GetMapping
     public ResultDTO getEmployees(EmployeeParamsDTO employeeParamsDTO) {
         return ResultDTO.ok(employeeService.getEmployeesByQueryParams(employeeParamsDTO));
@@ -37,6 +39,7 @@ public class EmployeeController {
     /**
      * 根据ID查询员工信息
      */
+    @Log
     @GetMapping("/{id}")
     public ResultDTO getEmployeeById(@PathVariable Integer id) {
         EmployeeDTO employeeDTO = employeeService.getEmployeeById(id);
@@ -46,6 +49,7 @@ public class EmployeeController {
     /**
      * 新增员工
      */
+    @Log
     @PostMapping
     public ResultDTO addEmployee(@RequestBody EmployeeDTO employeeDTO) {
         employeeService.addEmployee(employeeDTO);
@@ -55,6 +59,7 @@ public class EmployeeController {
     /**
      * 更新员工信息
      */
+    @Log
     @PutMapping
     public ResultDTO updateEmployee(@RequestBody EmployeeDTO employeeDTO) {
         employeeService.updateEmployee(employeeDTO);
@@ -64,12 +69,14 @@ public class EmployeeController {
     /**
      * 删除员工
      */
+    @Log
     @DeleteMapping("/{id}")
     public ResultDTO deleteEmployeeById(@PathVariable Integer id) {
         employeeService.deleteEmployeeById(id);
         return ResultDTO.ok("删除成功");
     }
 
+    @Log
     @DeleteMapping
     public ResultDTO deleteEmployeeByIds(@RequestParam Integer[] ids) {
         employeeService.deleteEmployeeByIds(ids);

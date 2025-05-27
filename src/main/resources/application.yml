@@ -26,6 +26,11 @@ aliyun:
       bucketName: spring233
       region: cn-beijing
 
+
+token:
+  secret: bumentongtokenkkkddd
+  expiration: 86400000
+
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

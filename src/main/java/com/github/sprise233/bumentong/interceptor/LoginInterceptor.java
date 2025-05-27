@@ -23,7 +23,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
 
         try {
-            JWTUtils.getUserId(request.getHeader("token"));
+            JWTUtils.parseUserByToken(request.getHeader("token"));
         } catch (Exception e) {
             response.setStatus(401);
             return false;
